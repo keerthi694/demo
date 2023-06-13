@@ -6,4 +6,4 @@ Resources:
  MyS3Bucket:
   Type: AWS::S3::Bucket
   Properties:
-   BucketName: "demo"
+   BucketName: "demokeerthi"
