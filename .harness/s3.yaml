@@ -1,0 +1,40 @@
+pipeline:
+  name: s3
+  identifier: s3
+  projectIdentifier: Demo
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: Stage1
+        identifier: Stage1
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: CreateStack
+                  name: CreateStack_1
+                  identifier: CreateStack_1
+                  timeout: 10m
+                  spec:
+                    provisionerIdentifier: s3demo
+                    configuration:
+                      stackName: s3
+                      connectorRef: Echo_welcome_message
+                      region: us-east-2
+                      templateFile:
+                        type: Remote
+                        spec:
+                          store:
+                            type: Github
+                            spec:
+                              paths:
+                                - bucket.yaml
+                              connectorRef: account.Github_OAuth_1686035578932
+                              repoName: demo
+                              gitFetchType: Branch
+                              branch: main
+                      roleArn: ""
+        tags: {}
