@@ -32,7 +32,7 @@ pipeline:
                             spec:
                               paths:
                                 - bucket.yaml
-                              connectorRef: account.Github_OAuth_1686035578932
+                              connectorRef: git
                               repoName: demo
                               gitFetchType: Branch
                               branch: main
