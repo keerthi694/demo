@@ -4,4 +4,4 @@ Resources:
  MyS3Bucket:
   Type: AWS::S3::Bucket
   Properties:
-   BucketName: "demokeerthi2"
+   BucketName: "demokeerthi3"
